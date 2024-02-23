@@ -1,0 +1,53 @@
+﻿@model ASP_Epreuve_hd.Models.Product.ProductDetailsViewModel
+
+@{
+    ViewData["Title"] = $"Fiche de {Model.Name}";
+}
+<div>
+    <div class="row">
+        <div class="col-sm-6 col-md-8">
+            <h1>@Model.Name</h1>
+
+             <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CategoryName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.EcologicalCriteriaEcoScore )
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.EcologicalCriteriaEcoScore )
+                </dd>
+            </dl>  
+        </div>
+    </div>
+</div>
+<div>
+
+    @Html.ActionLink("Modifier", "Edit", new { id=Model.Id_Product  }) |
+
+    @Html.ActionLink("Supprimer", "Delete", new { id=Model.Id_Product }) | 
+
+    <a asp-action="Index">Revenir à la liste</a>
+</div>

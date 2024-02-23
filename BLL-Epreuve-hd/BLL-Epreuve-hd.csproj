@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>BLL_Epreuve_hd</RootNamespace>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL-Epreuve-hd\DAL-Epreuve-hd.csproj" />
+    <ProjectReference Include="..\Shared-Epreuve-hd\Shared-Epreuve-hd.csproj" />
+  </ItemGroup>
+
+</Project>

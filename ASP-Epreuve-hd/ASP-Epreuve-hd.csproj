@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>ASP_Epreuve_hd</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BLL-Epreuve-hd\BLL-Epreuve-hd.csproj" />
+    <ProjectReference Include="..\DAL-Epreuve-hd\DAL-Epreuve-hd.csproj" />
+    <ProjectReference Include="..\Shared-Epreuve-hd\Shared-Epreuve-hd.csproj" />
+  </ItemGroup>
+
+</Project>

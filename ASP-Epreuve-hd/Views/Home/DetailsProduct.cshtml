@@ -1,0 +1,31 @@
+﻿@model ASP_Epreuve_hd.Models.Product.ProductDetailsViewModel
+
+@{
+    ViewData["Title"] = $"Fiche de {Model.Name}";
+}
+<div>
+    <div class="row">
+        <div class="col-sm-6 col-md-8">
+            <h1>@Model.Name</h1>
+       
+            <h4>@Html.DisplayNameFor(m=>m.CategoryName)</h4>
+            <p>@Model.CategoryName</p>
+            
+            <h4>@Html.DisplayNameFor(m=>m.Description)</h4> 
+            <p>@Model.Description</p>
+
+           <h4>@Html.DisplayNameFor(m=>m.Price)</h4> 
+            <p>@Model.Price</p>
+
+            <h4>@Html.DisplayNameFor(m=>m.EcologicalCriteriaEcoScore )</h4>
+            <p>@Model.EcologicalCriteriaEcoScore </p>
+
+            
+        </div>
+       
+    </div>
+</div>
+<div>
+   
+    <a asp-action="Index">Revenir à la liste</a>
+</div>

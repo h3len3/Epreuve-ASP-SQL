@@ -1,0 +1,73 @@
+﻿@using ASP_Epreuve_hd.Handlers
+@using BLL_Epreuve_hd.Entities
+@model ASP_Epreuve_hd.Models.ProductEditForm
+@inject BLL_Epreuve_hd.Services.CategoryService categoryService
+@{
+    ViewData["Title"] = "Modifier un produit";
+}
+
+<h1>Modifier un produit</h1>
+
+<h4>Veuillez remplir le formulaire</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" pattern="^[0-9]*[,\.]{0,1}[0-9]*$" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="EcologicalCriteriaEcoScore" class="control-label"></label>
+                <select asp-for="EcologicalCriteriaEcoScore" class="form-select">
+                    <option value="">Veuillez choisir un EcoScore</option>
+                    @foreach (string ecologicalcriteriaecoccore in Enum.GetNames<Ecoscore>())
+                    {
+                        <option value="@ecologicalcriteriaecoccore">@ecologicalcriteriaecoccore</option>
+                    }
+                </select>
+                <span asp-validation-for="EcologicalCriteriaEcoScore" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CategoryName"class="control-label"></label>
+                <select asp-for="CategoryName" class="form-select" asp-items="categoryService
+                                                            .Get()
+                                                            .Select( d => new SelectListItem () {
+                                                                    Text = d,
+                                                                    Value = d}
+                                                                   )">
+                    <option value="">Veuillez choisir une catégorie</option>
+               </select>
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div> 
+            
+            <div class="form-group">
+                <input type="submit" value="Enregistrer" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Revenir à la liste</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

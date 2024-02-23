@@ -1,0 +1,80 @@
+﻿
+@model IEnumerable<ASP_Epreuve_hd.Models.Product.ProductListItemViewModel>
+
+@inject BLL_Epreuve_hd.Services.CategoryService categoryService
+
+
+
+@{
+    ViewData["Title"] = "Accueil";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenue ! </h1>
+</div>
+
+<h1>Accueil</h1>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EcologicalCriteriaEcoScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EcologicalCriteriaEcoScore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    @Html.ActionLink("Voir détails", "DetailsProduct", new { id=item.Id_Product }) 
+                </td> 
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h1>Recherchez des produits par catégorie : </h1>
+
+<form method="get" action="">
+    <h2> Catégories: </h2>
+    @foreach (string CategoryName in categoryService.Get())
+    {
+        <div>
+            <input id="chbx_@CategoryName" type="checkbox" name="selectedCateg" value="@CategoryName"/>
+            <label for="chbx_@CategoryName">@CategoryName</label>
+        </div>
+    } 
+    <input type="submit" value="Submit" >
+</form>
