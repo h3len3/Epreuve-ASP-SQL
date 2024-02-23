@@ -18,7 +18,9 @@ go
 
 EXEC SP_Product_Insert 'Assiette', 'Assiette en bois - plate - grande taille', 9, 'A', 'Vaisselle';
 EXEC SP_Product_Insert 'Assiette', 'Assiette en bois - creuse - grande taille', 11, 'A', 'Vaisselle';
-EXEC SP_Product_Insert 'Echarpe', 'Echarpe 100% laine - bleue - longueur 60cm', 25.80, 'A', 'Vêtement';
+EXEC SP_Product_Insert 'Bol', 'Bol en inox', 6, 'B', 'Vaisselle';
+EXEC SP_Product_Insert 'Echarpe', 'Echarpe 100% laine - bleue - longueur 60 cm', 25.80, 'A', 'Vêtement';
+EXEC SP_Product_Insert 'Echarpe', 'Echarpe 100% laine - rouge - longueur 80 cm', 25.80, 'A', 'Vêtement';
 
 
 --DECLARE @today DATE = CONVERT(DATE,GETDATE());
