@@ -41,8 +41,7 @@ namespace BLL_Epreuve_hd.Mappers
             };
         }
         #endregion
-
-        
+       
     }
 }
 

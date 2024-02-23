@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" pattern="^[0-9]*[,\.]{0,1}[0-9]*$" />
+                <input asp-for="Price" class="form-control" pattern="^\d*,{0,1}\d*$"/>
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
 
@@ -66,8 +66,3 @@
     <a asp-action="Index">Revenir à la liste</a>
 </div>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

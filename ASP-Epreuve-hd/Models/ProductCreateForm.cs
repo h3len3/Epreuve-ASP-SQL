@@ -16,8 +16,9 @@ namespace ASP_Epreuve_hd.Models.Product
        
         public string Description{ get; set; }
         [DisplayName("Prix (en €)")]
-        [Required(ErrorMessage = "Le prix est obligatoire.")]
-        
+        [DataType(DataType.Currency)]
+        [Required(ErrorMessage = "Le prix du produit est obligatoire")]
+
         public decimal Price { get; set; }
         [DisplayName("Eco score")]
         [Required(ErrorMessage = "Un éco store doit être attribué.")]
@@ -28,7 +29,6 @@ namespace ASP_Epreuve_hd.Models.Product
         [Required(ErrorMessage = "La catégorie est obligatoire.")]
 
         public string CategoryName { get; set; }
-
 
     }
 }

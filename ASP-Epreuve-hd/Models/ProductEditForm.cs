@@ -12,21 +12,23 @@ namespace ASP_Epreuve_hd.Models
         public int Id_Product { get; set; }
 
         [DisplayName("Nom")]
-        [Required(ErrorMessage = "Le  nom du produit  est obligatoire.")] 
-        [MaxLength(64, ErrorMessage = "Le titre du film doit être composé de maximum 64 caractères.")]
+        [Required(ErrorMessage = "Le  nom du produit est obligatoire.")] 
+        [MaxLength(64, ErrorMessage = "Le nom du produit doit être composé de maximum 64 caractères.")]
         public string Name { get; set; }
         [DisplayName("Description")]
-        [Required(ErrorMessage = "La description du produit  est obligatoire.")]
+        [Required(ErrorMessage = "La description du produit est obligatoire.")]
         public string Description { get; set; }
+     
         [DisplayName("Prix (en €)")]
-        [Required(ErrorMessage = "Le  prix du produit  est obligatoire.")]
+        [DataType(DataType.Currency)]
+        [Required(ErrorMessage = "Le prix du produit est obligatoire")]  
         public decimal Price { get; set; }
         [DisplayName("Eco score")]
-        [Required(ErrorMessage = "L'écoscore du produit  est obligatoire.")]
+        [Required(ErrorMessage = "L'Eco score du produit est obligatoire.")]
         public Ecoscore EcologicalCriteriaEcoScore { get; set; }
 
         [DisplayName("Catégorie")]
-        [Required(ErrorMessage = "La catégorie du produit  est obligatoire.")]
+        [Required(ErrorMessage = "La catégorie du produit est obligatoire.")]
         public string CategoryName { get; set; }
     }
 }

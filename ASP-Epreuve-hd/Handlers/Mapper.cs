@@ -24,7 +24,6 @@ namespace ASP_Epreuve_hd.Handlers
 
             };
         }
-
         public static ProductDetailsViewModel ToDetails(this Product entity)
         {
             if (entity is null) return null;

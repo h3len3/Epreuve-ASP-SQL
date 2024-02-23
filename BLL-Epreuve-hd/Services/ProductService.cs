@@ -10,7 +10,7 @@ using System.Text;
 
 using System.Threading.Tasks;
 using DAL = DAL_Epreuve_hd.Entities;
-using Product = BLL_Epreuve_hd.Entities.Product;
+using Product =BLL_Epreuve_hd.Entities.Product;
 
 namespace BLL_Epreuve_hd.Services
 {
@@ -39,8 +39,6 @@ namespace BLL_Epreuve_hd.Services
             return _productRepository.Get(id).ToBLL();
         }
 
-       
-
         public int Insert(Product entity)
         {
              return _productRepository.Insert(entity.ToDAL());
@@ -51,8 +49,7 @@ namespace BLL_Epreuve_hd.Services
         {
             _productRepository.Update(entity.ToDAL());
         }
-
-     
+   
         public IEnumerable<Product> GetByCategory(string category)
         {
            

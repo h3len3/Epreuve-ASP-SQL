@@ -1,10 +1,7 @@
 ﻿using ASP_Epreuve_hd.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-
 using Microsoft.AspNetCore.Http;
-
-
 using BLL_Epreuve_hd.Entities;
 using ASP_Epreuve_hd.Handlers;
 using Shared_Epreuve_hd.Repositories;
@@ -35,12 +32,16 @@ namespace ASP_Epreuve_hd.Controllers
                     categ.AddRange(_productRepository.GetByCategory(categoryName).Select(d => d.ToListItem()));
                 }
                 model = categ.Distinct();
+
+                ViewBag.filter = true;
+
             }
 
             else
             {
 
                 model = _productRepository.Get().Select(d => d.ToListItem());
+                ViewBag.filter = false;
             }
 
             return View(model);
@@ -52,30 +53,7 @@ namespace ASP_Epreuve_hd.Controllers
             return View(model);
         }
 
-        public ActionResult CategoryFilter(string[] selectedCateg)
-        {
-         
-            IEnumerable<ProductListItemViewModel> model;
-
-            if (selectedCateg != null )
-            {
-                List<ProductListItemViewModel> categ = new List<ProductListItemViewModel>();
-                foreach (string categoryName in selectedCateg)
-                {
-                    categ.AddRange(_productRepository.GetByCategory(categoryName).Select(d => d.ToListItem()));
-                }
-                model = categ.Distinct();
-            }
-
-            else
-            {
-
-                model = _productRepository.Get().Select(d => d.ToListItem());
-            }
-
-            return View(model);
-        }
-
+     
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

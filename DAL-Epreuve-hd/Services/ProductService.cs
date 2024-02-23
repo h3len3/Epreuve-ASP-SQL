@@ -89,8 +89,7 @@ namespace DAL_Epreuve_hd.Services
                         connection.Open();
                         return (int)command.ExecuteScalar();
                     }
-                }
-            
+                }            
         }
 
         public void Update(Product entity)
@@ -112,7 +111,6 @@ namespace DAL_Epreuve_hd.Services
                 }
             }
         }
-
 
         public IEnumerable<Product> GetByCategory(string category)
         {

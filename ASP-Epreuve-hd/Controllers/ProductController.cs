@@ -41,39 +41,9 @@ namespace ASP_Epreuve_hd.Controllers
         {
             return View();
         }
-        /*
+        
         // POST: Product/Create
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create(IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create(StudentCreateForm form)
-        //{
-        //    try
-        //    {
-        //        if (form is null) ModelState.AddModelError(nameof(form), "Pas de données reçues");
-        //        if (!ModelState.IsValid) throw new Exception();
-        //        int id = _studentRepository.Insert(form.ToBLL());
-        //        return RedirectToAction(nameof(Details), new { id });
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}*/
-
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ProductCreateForm form)
